@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html class="ui-mobile">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="msapplication-tap-highlight" content="no" />
+
+        <!-- css links -->
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css">
+        <link rel="stylesheet" type="text/css" href="css/ws.css" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+
+        <title>Pesquisa em Legislação - COFFITO</title>
+
+        <!-- javascritp -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery.blockUI.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery.quick.pagination.min.js"></script>
+        <script type="text/javascript" src="js/ws_lawsearch_production.js"></script>
+
+    </head>
+    <body class="ui-mobile-viewport" onload="app.initialize();">
+    <div role="page">
+        <div role="main" class="ui-content">
+            <div id="header" align="center">
+                <img id="header-img" src="img/logo-coffito-2500x659.png">
+            </div>
+            <div id="title">
+                <p id="application-title">Vasculha Lei</p>
+            </div>
+            <div id="param_search">
+                <form id="form_search" action="http://coffito2.hospedagemdesites.ws/site/webservices/vasculhalei/ws-vasculhalei.php">
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+                        <input type="text" id="campo_search" name="campo_search">
+                        <a href="#" class="search-param-button ui-shadow ui-btn ui-corner-all ui-btn-inline ui-btn-b ui-mini" onClick="javascript: executaBusca();">Buscar</a>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="results-container">
+                <ul id="results" class="ui-listview" data-role="listview"></ul>
+            </div>
+            <div id="content-container">
+                <p style="text-align: right"><a href="#" onclick="getBack();">voltar</a></p>
+                <div id="content">
+                </div>
+                <p style="text-align: right"><a href="#" onclick="getBack();">voltar</a></p>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
+
+ 
